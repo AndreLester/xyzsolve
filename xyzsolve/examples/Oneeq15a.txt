@@ -1,0 +1,4 @@
+Sinkage depth of sphere in water - 1st form|POLVER05_1
+f(h) = h*(1+h*(3-h))-2.4-h #
+h(min)=-2
+h(max)=5

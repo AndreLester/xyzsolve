@@ -1,0 +1,13 @@
+Poorly scaled chemical equilibrium problem  |POLVER05_3
+f(x1) = x1+x2+x4-0.001 #
+f(x2) = x5+x6-55 #
+f(x3) = x1+x2+x3+2*x5+x6-110.001 #
+f(x4) = x1-0.1*x2 #
+f(x5) = x1-1e4*x3*x4 #
+f(x6) = x5-55e14*x3*x6 #
+x1(0)=10 
+x2(0)=10 
+x3(0)=10 
+x4(0)=10 
+x5(0)=10 
+x6(0)=10

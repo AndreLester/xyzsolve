@@ -1,0 +1,17 @@
+Multiple steady states in a cooled exothermic CSTR |POLVER05_1
+f(T)=F*(T0-T)/V+30000*k*Ca/rhocp-U*A*(T-Tj)/(rhocp*V) #
+f(Ca) =F*(Ca0-Ca)/V-k*Ca #
+f(Tj)=Fj*(Tj0-Tj)/3.85+U*A*(T-Tj)/(62.3*1.0*3.85) #
+k=7.08e10*exp(-30000/1.9872/T) #
+rhocp=50*0.75 #
+F=40 #
+T0=530 #
+V=48 #
+U=150 #
+A=250 #
+Ca0=0.55 #
+Fj=49.9 #
+Tj0=530 #
+T(0)=600
+Ca(0)=0.1
+Tj(0)=600

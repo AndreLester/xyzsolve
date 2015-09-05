@@ -1,0 +1,56 @@
+#Small flow sheeting system with recycle  |POLVER05_3
+0 = x3-x1-x9  #
+0 = x4-x2-x10  #
+0 = (x3/(x3+x4)-xAinf)*exp(-(kA+kB)*tau)+xAinf-x5/(x5+x6)  #
+0 = x3+x4-x5-x6  #
+0 = x7/(x7+x8)-KA*x9/(x9+x10)  #
+0 = x8/(x7+x8)-KB*x10/(x9+x10)  #
+0 = x5-x7-x9  #
+0 = x6-x8-x10  #
+0 = x1-0.9  #
+0 = x2-0.1  #
+tau=22.5/(x3+x4)  #
+xAinf=kB/(kA+kB)  #
+
+KA=0.4409  #
+KB=1.8299  #
+kA=0.08  #
+kB=0.03  #
+
+tau.guess = 18.75
+x1.guess=0.9
+x2.guess=0.1
+x3.guess=1
+x4.guess=0.2
+x5.guess=0.5
+x6.guess=0.8
+x7.guess=0.2
+x8.guess=0.7
+x9.guess=0.2
+x10.guess=0.1
+
+
+x1.min=0.0
+x2.min=0.0
+x3.min=0.0
+x4.min=0.0
+x5.min=0.0
+x6.min=0.0
+x7.min=0.0
+x8.min=0.0
+x9.min=0.0
+x10.min=0.0
+
+#x1.max=5.0
+#x2.max=5.0
+#x3.max=5.0
+#x4.max=5.0
+#x5.max=5.0
+#x6.max=5.0
+#x7.max=5.0
+#x8.max=5.0
+#x9.max=5.0
+#x10.max=5.0
+
+#Need to figure out way to automatically guess some of these variables.
+#For example a better guess of tau is needed than the default 1.0

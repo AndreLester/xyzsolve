@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>xyzsolve - Simple app for solving equations</title>
+<meta name="verify-v1" content="vRxX5MTr0XOskgrE30/Q5EyWZq2tCUiF+NTi3cU2Qx8=" />
+<SCRIPT TYPE="text/javascript" SRC="http://ajax.googleapis.com/ajax/libs/dojo/1.3/dojo/dojo.xd.js"></SCRIPT>
+
+<script language="javascript"  type="text/javascript">
+
+
+function doSolve(){
+    dojo.xhrGet({
+	    url:"input.py",
+	    content: {
+		"value":document.getElementById("input").value},
+	    load: function(data,ioargs){
+              if (data[0] == '!'){
+                 errors = data.split('\n');
+                 mesg = errors[0].split('!')[1];
+                 line_no = "Line number:" + errors[1];
+                 last_valid = "Last parsed: " + errors[2];
+                 alert(mesg + '\n' + line_no + '\n' + last_valid);
+              }
+              else{
+                document.getElementById("results").value =  data + document.getElementById("results").value;
+              }          
+	}});
+}
+
+function doExample1(){
+    var e = "#Shows features of xyzsolve\n\
+#Calculate the temperature for a given saturation pressure\n\
+#using the Antoine vapor pressure equation\n\
+A = 8.07131 # Coefficient A\n\
+B = 1730.63 # Coefficient B\n\
+C = 233.426 # Coefficient C\n\
+P = 10**(A - B/(T+C)) # Antoine Equation\n\
+P = 860 #Pressure we want to calculate the temperature at\n\
+T.guess = 100 #We think this is a good guess\n";
+document.getElementById("input").value = e;
+}
+
+function doExample2(){
+    var e = "#\n\
+#Calculate molar volume using the SRK Equation of State\n\
+#using the Antoine vapor pressure equation\n\
+// Parameters: P(atm), Vhat(L/mol), T(K), V(L/h)\n\
+R = 0.08206\n\
+Tc = 369.9\n\
+Pc = 42\n\
+a = 0.42747 * (R*Tc)^2/Pc\n\
+b = 0.08664 * R*Tc/Pc\n\
+w = 0.152\n\
+m = 0.48508 + 1.55171*w - 0.1561*w^2\n\
+T = 423\n\
+P=70\n\
+Tr = T/Tc\n\
+alpha = (1 + m*(1 - Tr^0.5))^2\n\
+// SRK equation\n\
+P - R*T/(Vhat-b) + alpha*a / (Vhat*(Vhat+b)) = 0\n\
+V = 100*Vhat\n\
+Vhat.guess = 20.0\n";
+document.getElementById("input").value = e;
+}
+
+function doExample3(){
+    var e = "// Mixing Point:\n\
+n0 + n6 = 100\n\
+\n\
+// Reactor:\n\
+\n\
+n1 = 100 - xi1 - xi2\n\
+n2 = xi1\n\
+n3 = xi2\n\
+n4 = xi1 + 2*xi2\n\
+ntot = n1 + n2 + n3  + n4\n\
+\n\
+side1 = 3.75  * ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2))\n\
+xi1*(xi1 + 2*xi2) = side1\n\
+side2 = 0.135 * ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2)^2)\n\
+xi2*(xi1 + 2*xi2)^2 = side2\n\
+\n\
+// Separation Process:\n\
+n5 = 0.05*n1\n\
+n1 = n5 + n6\n\
+\n\
+\n\
+// Play around with bounds and guesses\n\
+// There are multiple solution sets.\n\
+\n\
+n0.guess = 100\n\
+n1.guess = 50\n\
+n2.guess = 50\n\
+n3.guess = 50\n\
+n4.guess = 50\n\
+n5.guess = 50\n\
+n6.guess = 50\n\
+ntot.guess = 200\n\
+xi1.guess = 100\n\
+xi2.guess = 100\n\
+\n\
+// Or enforce bounds with the min/max attributes\n\
+n0.min = 0\n\
+n1.min = 0\n\
+n2.min = 0\n\
+n3.min = 0\n\
+n4.min = 0\n\
+n5.min = 0\n\
+n6.min = 0\n\
+ntot.min = 0\n\
+xi1.min = 0\n\
+xi2.min = 0\n";
+document.getElementById("input").value = e;
+}
+
+function doExample4(){
+    var e = "#Calculate friction factor using the Colebrook equation\n\
+e=0.001\n\
+Re=1000000\n\
+1/sqrt(f)=-2*log(e/3.71+2.51/(Re*sqrt(f)),10)\n\
+f.min = 0\n";
+document.getElementById("input").value = e;
+}
+
+function doExample5(){
+    var e = "#Complex example to calc. equilibrium values in combustion\n\
+\n\
+#Total Carbon\n\
+n1 + n4 - 3 = 0\n\
+\n\
+#Total Oxygen\n\
+2*n1 + n2 + n4 + n7 + n8 + n9 + 2*n10 - R = 0\n\
+\n\
+#Total Hydrogen\n\
+2*n2 + 2*n5 + n6 + n7 - 8 = 0\n\
+\n\
+#Total Nitrogen\n\
+2*n3 + n9 - 4*R = 0\n\
+\n\
+#All\n\
+nT = n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10\n\
+\n\
+#Equilibrium\n\
+pfact = p/nT\n\
+K5*n2*n4 - n1*n5 = 0\n\
+K6*sqrt(n2*n4) - sqrt(n1)*n6*sqrt(pfact) = 0\n\
+K7*sqrt(n1*n2) - sqrt(n4)*n7*sqrt(pfact) = 0\n\
+K8*n1 - n4*n8*(pfact) = 0\n\
+K9*n1*sqrt(n3) - n4*n9*sqrt(pfact) = 0\n\
+K10*n1*n1 - n4*n4*n10*pfact = 0\n\
+\n\
+#Equilibrium constants @ 2200K\n\
+\n\
+K5 = 1.930e-1\n\
+K6 = 2.597e-3\n\
+K7 = 3.448e-3\n\
+K8 = 1.779e-5\n\
+K9 = 2.155e-4\n\
+K10 = 3.846e-5\n\
+\n\
+#Pressure in atmospheres\n\
+p = 40\n\
+\n\
+#Stoich. ratio\n\
+R = 10\n\
+\n\
+n1.guess = 25\n\
+n2.guess = 5\n\
+n3.guess = 5\n\
+n4.guess = 5\n\
+n5.guess = 25\n\
+n6.guess = 5\n\
+n7.guess = 25\n\
+n8.guess = 5\n\
+n9.guess = 5\n\
+n10.guess = 50\n\
+pfact.guess = 100\n\
+\n\
+\n\
+n1.min = 0\n\
+n2.min = 0\n\
+n3.min = 0\n\
+n4.min = 0\n\
+n5.min = 0\n\
+n6.min = 0\n\
+n7.min = 0\n\
+n8.min = 0\n\
+n9.min = 0\n\
+n10.min = 0\n\
+pfact.min = 0\n";
+document.getElementById("input").value = e;
+}
+
+function eraseResults(){
+    document.getElementById("results").value = "";
+}
+
+function eraseInput(){
+    document.getElementById("input").value = "";
+}
+
+</script>
+</head>
+
+<body>
+<h1>xyzsolve</h1>
+<i>Solves sets of non-linear(and linear) equations<br></i><br>
+<table>
+<tr colspan=6><td>Examples of different types of processes, <a href="mailto:kpatvt@gmail.com">send</a> your own<br></td></tr>
+<tr>
+<td align="left" valign="top"><a href="#" onclick="doExample1();">Vapor pressure</a>|
+<a href="#" onclick="doExample2();">SRK Equation of State</a>|
+<a href="#" onclick="doExample3();">Reaction/Separation</a>|
+<a href="#" onclick="doExample4();">Friction factor</a>|
+<a href="#" onclick="doExample5();">Combustion</a></td>
+</tr>
+
+<tr>
+<td align="left" valign="top"> 
+<br>
+
+<a href="#" onclick="eraseInput();">Erase</a><br>
+<textarea name="input" id="input" cols=60 rows=20>
+</textarea>
+<br>
+
+
+
+<BR>
+<a href="#" onclick="eraseResults();">Erase</a><br>
+<textarea name="results" id="results" cols=60 rows=15>
+</textarea>
+
+</td>
+
+<td valign="top">
+
+<ul>
+<li><input type="submit" name="solve" value="Analyze and solve" onclick="doSolve();" /></li><br>
+<li>Try <a href="http://proph2o.appspot.com">Standard properties of water</a></li><br>
+<li><b>NEW!</b> Supports min and max bounds on all variables, use variable.min or variable.max to enforce bounds</li><br>
+<li>xyzsolve relies on a modified Powell hybrid algorithm.</li><br>
+<li>xyzsolve <b>cannot</b> tell you how to solve the problem analytically</li><br>
+<li>xyzsolve works only with real numbers</li><br>
+<li>Enter your equations as naturally formulated: x^2 + 2 = 2</li><br>
+<li>One equation on a line, blank lines and lines starting with #, //, ! are ignored.</li><br>
+<li>Recognized operators are ^ (power of), +, -, *, /<br></li><br>
+<li>Available functions: <i>sin, cos, tan, exp, log, pow, acos, asin, atan, sinh, cosh, tanh</i><br></li><br>
+<li>Remember all trignometric functions work in radians (not degrees)<br></li><br>
+<li>Convert from degrees to radians by using the <i>radians</i> function and radians to degrees with the <i>degrees</i> function<br></li><br>
+<li>All functions only accept a single argument, except log which accepts an additional argument as the base<br></li><br>
+<li>If you want the log base 2 of 4, you need to enter log(4, 2)<br></li><br>
+<li>Supply an initial guess by typing variable.guess = value<br></li><br>
+<li>If the solution fails, try a better guess<br></li><br>
+</ul>
+
+
+
+</td>
+</tr>
+
+</table>
+
+
+<hr>
+<center>
+<i>Suggestions or complaints?</i><br>
+<b><a href="mailto:kpatvt@gmail.com">kpatvt@gmail.com</a></b><br><br>
+This service is offered as-is and there are no guarantees of accuracy or reliability. <br>
+Use at your own risk. <br><br>
+<a href="http://code.google.com/appengine/" target="#blank"><img src="images/appengine-noborder-120x30.gif"></a>
+
+
+
+</center>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+#Eq. composition in a constant volume gas-phase batch reactor
+0 = CC*CD/(CA*CB)-KC1 #
+0 = CX*CY/(CB*CC)-KC2 #
+0 = CZ/(CA*CX)-KC3 #
+CY=CX+CZ #
+CC=CD-CY #
+CA=CA0-CD-CZ #
+CB=CB0-CD-CY #
+KC1=1.06 #
+KC2=2.63 #
+KC3=5 #
+CA0=1.5 #
+CB0=1.5 #
+CD.guess = 0.7
+CX.guess = 0.2
+CZ.guess = 0.4
+
+/*
+
+Most recent solution:
+---------------------
+Solution norm: 7.15040782298e-11
+CA = 0.420689009016
+CB = 0.242896588962
+CC = 0.153565400898
+CD = 0.705334405968
+CX = 0.177792420054
+CY = 0.55176900507
+CZ = 0.373976585016
+*/

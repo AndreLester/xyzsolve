@@ -1,0 +1,15 @@
+Pipe diameter calculation for specified pressure drop     |POLVER05_3
+f(D) = -dp/rho+2*fF*v*v*L/D   #
+f(fF) = if (Re<2100) then (fF-16/Re) else (fF-1/(4*log(Re*(fF)^(1/2))-0.4)^2) #
+dp=103000   #
+L=100   #
+T=25+273.15   #
+Q=0.0025   #
+pi=3.1416   #
+rho=46.048+T*(9.418+T*(-0.0329+T*(4.882e-5-T*2.895e-8)))   #
+vis=exp(-10.547+541.69/(T-144.53))   #
+v=Q/(pi*D^2/4)   #
+kvis=vis/rho   #
+Re=v*D/kvis   #
+D(0)=0.04
+fF(0)=.001

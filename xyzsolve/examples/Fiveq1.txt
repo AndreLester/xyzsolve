@@ -1,0 +1,54 @@
+#Steady state operation of an exothermic CSTR
+0 = F*(2.88-ca)/V-k*ca*ca #
+0 = F*(66-t1)/V-dhr*k*ca*ca/(rho*cp)-u*a*(t1-tc)/(V*rho*cp) #
+0 = u*a*(t1-tc)/(1.82*1000*4184)-fc*(tc-27)/1.82 #
+0 = ((t1-80)/20-b)/20 #
+0 = (m-y)/taui #
+k=0.0744*exp(-1.182e7/(8314.39*(t1+273.16)))  #
+fc = 0.02*50^(-m)  #
+m = y+kc*(10/20-b) #
+F=0.0075  #
+V=7.08  #
+dhr=-9.86e7  #
+rho=19.2  #
+cp=1.815e5  #
+u=3550  #
+a=5.4  #
+taui=600  #
+kc=1  #
+ca.guess=1
+t1.guess=100
+tc.guess=50
+b.guess=0.4
+y.guess=0.25
+m.min = 0
+b.min = 0
+fc.min = 0
+ca.min = 0
+y.min = 0
+
+#Iteration is not making good progress.
+
+#The solver is likely stuck in a variable space valley.
+
+#Try another initial guess.
+
+#---------------------
+
+#Solution norm: 0.0600345094886
+
+#b  = 0.0461227795501
+
+#ca = 1.16922770658
+
+#fc = 0.0424266715382
+
+#k  = 0.0013284267895
+
+#m  = 0.121042473243
+
+#t1 = 79.9999999903
+
+#tc = 33.092743275
+
+#y  = 0.121042962028

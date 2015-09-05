@@ -1,0 +1,11 @@
+Exothermic reversible reaction in a CSTR  |POLVER05_1
+f(X) = -0.16*X*F0/h+k1*(1-X)-k2*X #
+f(T) = 0.16*F0*T0/h-0.16*T*F0/h+5*(k1*(1-X)-k2*X) #
+f(h) = 0.16*F0-0.4*sqrt(h) #
+k1 = 3e5*exp(-5000/T) #
+k2 = 6e7*exp(-7500/T) #
+F0 = 1 #
+T0 = 300 #
+X(0)=0.5
+T(0)=500
+h(0)=0.5

@@ -1,0 +1,4 @@
+Conversion in a Chemical Reactor
+f(x) = x/(1-x)-5*ln(0.4*(1-x)/(0.4-0.5*x))+4.45977 #
+x(min)=.0
+x(max)=.79

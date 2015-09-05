@@ -1,0 +1,15 @@
+Van Laar eqs. coeff. from azeotropic data (ethanol - n heptane) - 1st form. |POLVER05_3
+f(A) = log(gamma1)-A*x2^2/(A*x1/B+x2)^2 #
+f(B) = log(gamma2)-B*x1^2/(x1+B*x2/A)^2 #
+t=70.9 #
+pw1=49 #
+x1=(pw1/46.07)/(pw1/46.07+(100-pw1)/100.2) #
+P2=10^(6.9024-1268.115/(216.9+t)) #
+P1=10^(8.04494-1554.3/(222.65+t)) #
+gamma1=760/P1 #
+x2=1-x1 #
+gamma2=760/P2 #
+g1calc=10^(A*x2^2/(A*x1/B+x2)^2) #
+g2calc=10^(B*x1^2/(x1+B*x2/A)^2) #
+A(0)=1.0
+B(0)=1.0

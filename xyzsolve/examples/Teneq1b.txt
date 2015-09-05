@@ -1,0 +1,23 @@
+Chemical Equilibrium Problem   |POLVER05_1
+f(x1) = x1+x4-3  #
+f(x2) = 2*x1+x2+x4+x7+x8+x9+2*x10-R  #
+f(x3) = 2*x2+2*x5+x6+x7-8  #
+f(x4) = 2*x3+x5-4*R  #
+f(x5) = x1*x5-0.193*x2*x4  #
+f(x6) = x6*sqrt(x2)-0.002597*sqrt(x2*x4*xs)  #
+f(x7) = x7*sqrt(x4)-0.003448*sqrt(x1*x4*xs)  #
+f(x8) = x8*x4-1.799e-5*x2*xs  #
+f(x9) = x9*x4-0.0002155*x1*sqrt(x3*xs)  #
+f(x10) = x10*x4^2-3.846e-5*x4^2*xs  #
+R = 40  #
+xs = x1+x2+x3+x4+x5+x6+x7+x8+x9+x10  #
+x1(0)=2
+x2(0)=5
+x3(0)=80
+x4(0)=1
+x5(0)=0
+x6(0)=0
+x7(0)=0
+x8(0)=0
+x9(0)=20
+x10(0)=5

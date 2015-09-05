@@ -1,0 +1,17 @@
+Steady state operation of an adiabatic CSTR    |POLVER05_3
+f(CA) = CA0-CA-theta*k1*CA/(1+KA*CB)  #
+f(CB) = CB-CB0-(theta*k1*CA/(1+KA*CB)-theta*k2*CB+theta*k2p*CC)  #
+f(T) = 85*(T-T0)+0.02*(T^2-T0^2)-((16000+3*T-0.002*T^2)*((CA0-CA)/CA0)+(30000+4*T-0.003*T^2)*CC/CA0)  #
+CC = (CC0+theta*k2*CB)/(1+theta*k2p) #
+k1 = 4e6*exp(-60000/(8.314*T))  #
+KA = 17*exp(-7000/(8.314*T))   #
+k2 = 3e4*exp(-80000/(8.314*T))   #
+k2p = 3e4*exp(-90000/(8.314*T))   #
+T0 = 298   #
+CA0 = 3   #
+CB0 = 0   #
+CC0 = 0   #
+theta = 300   #
+CA(0)=3
+CB(0)=0
+T(0)=300

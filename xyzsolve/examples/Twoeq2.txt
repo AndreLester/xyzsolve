@@ -1,0 +1,6 @@
+Steady state material and energy balance on a reactor  |POLVER05_1
+f(x) = 120*x-75*k*(1-x) #
+f(T) = -x*(873-T)+11.0*(T-300) #
+k = 0.12*exp(12581*(T-298)/(298*T))  #
+x(0)=1
+T(0)=400

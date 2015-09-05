@@ -1,0 +1,69 @@
+#Modeling of a CSTR for a complex sequence of reactions
+0 = V- vo*(CAO-CA)/(-rA)   #
+0 = V - vo*(CBO-CB)/(-rB)   #
+0 = V- vo*CC/rC  #
+0 = V - vo*CD/rD   #
+0 = V - vo*CE/rE   #
+0 = 5000*(350-T) - 25*(20+40)*(T-300) + V*SRH  #
+rA = 2*r1B   #
+rB = r1B+2*r2C   #
+rC = -3*r1B + r2C   #
+rD = -r3E - r2C   #
+rE = r3E   #
+r1B = -k1B*CA*CB   #
+r2C = -k2C*CC*CB^2   #
+r3E = k3E*CD   #
+k1B = 0.4*exp((20000/R)*(1/300-1/T))   #
+k2C = 10*exp((5000/R)*(1/310-1/T))   #
+k3E = 10*exp((10000/R)*(1/320-1/T))   #
+SRH = -rA*20000 + 2*r2C*10000 + 5000*r3E   #
+R = 1.987   #
+V = 500   #
+vo = 75/3.3   #
+CAO = 25/vo   #
+CBO = 50/vo   #
+
+CA.min = 0
+CB.min = 0
+CC.min = 0
+CD.min = 0
+CE.min = 0
+T.min = 0
+
+CA.guess=.5
+CB.guess=.01
+CC.guess=1
+CD.guess =.01
+CE.guess=1
+T.guess=420
+
+
+/*
+
+Iteration is not making good progress.
+The solver is likely stuck in a variable space valley.
+Try another initial guess.
+---------------------
+Solution norm: 1142.99405497
+CA  = 0.998754521577
+CAO = 1.09964331862
+CB  = 0.00795319479464
+CBO = 2.19971162079
+CC  = 0.173438165188
+CD  = 37.7629407585
+CE  = 890.126237257
+k1B = 0.696279852026
+k2C = 17.3267713334
+k3E = 17.481947597
+r1B = 167.735783835
+r2C = 123.650903147
+r3E = 846.466446667
+rA  = 335.474235624
+rB  = 415.040232567
+rC  = -379.56131008
+rD  = -970.119564458
+rE  = 846.468077783
+SRH = -4134.10021878
+T   = 20.4540086682
+
+*/

@@ -1,0 +1,17 @@
+Wilson coeff. from azeotropic data (ethyl alcohol - n hexane)- 2nd form. |POLVER05_1
+f(G21) = t1*t2*(ln(gamma2)+ln(t2))+x1*(G12*t2-G21*t1) #
+f(G12) = t1*t2*(ln(gamma1)+ln(t1))-x2*(G12*t2-G21*t1) #
+t=58.7  #
+pw1=21  #
+x1=(pw1/46.07)/(pw1/46.07+(100-pw1)/86.18)  #
+P2 = 10^(6.87776-1171.53/(224.366+t))  #
+P1 = 10^(8.04494-1554.3/(222.65+t))  #
+gamma2=760/P2  #
+gamma1=760/P1  #
+x2=1-x1  #
+t1=x1+x2*G12  #
+t2=x2+x1*G21  #
+g2calc=exp(-ln(t2)-x1*(G12*t2-G21*t1)/(t1*t2)) #
+g1calc=exp(-ln(t1)+x2*(G12*t2-G21*t1) /(t1*t2)) #
+G21(0)=0.8
+G12(0)=0.8

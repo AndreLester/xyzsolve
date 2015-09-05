@@ -1,0 +1,19 @@
+Adiabatic Flame Temperature for Natural Gas Combustion |POLVER05_1
+f(T) = 212798*y*xx+372820*z*xx+H0-Hf #
+y = 0.7 #
+x = 1.7 #
+z=1-y-0.02 #
+CH4=if (x<1) then (y*(1-x)) else (0) #
+C2H6=if (x<1) then (z*(1-x)) else (0) #
+COtwo = if (x<1) then ((y+2*z)*x) else (y+2*z) #
+H2O=if (x<1) then ((2*y+3*z)*x) else (2*y+3*z) #
+N2=0.02+3.76*(2*y+7*z/2)*x #
+alp = 3.381*CH4+2.247*C2H6+6.214*COtwo+7.256*H2O+6.524*N2+6.148*O2 #
+bet = 18.044*CH4+38.201*C2H6+10.396*COtwo+2.298*H2O+1.25*N2+3.102*O2 #
+gam = -4.3*CH4-11.049*C2H6-3.545*COtwo+0.283*H2O-0.001*N2-0.923*O2 #
+H0 = alp*298+bet*0.001*298*298/2+gam*1e-6*298^3/3 #
+Hf = alp*T+bet*0.001*T^2/2+gam*1e-6*T^3/3 #
+O2 = if (x<1) then (0) else ((2*y+7*z/2)*(x-1)) #
+xx = if (x<=1) then (x) else (1) #
+T(min)=1000
+T(max)=3000

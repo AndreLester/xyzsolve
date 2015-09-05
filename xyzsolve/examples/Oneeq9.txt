@@ -1,0 +1,8 @@
+Pressure drop in a converging diverging nozzle |POLVER05_1
+f(P) = ((gama+1)/2)^((gama+1)/(gama-1))*(2/(gama-1))*((P/Pd)^(2/gama)-(P/Pd)^((gama+1)/gama))-At^2/A^2  #
+At = 0.1  #
+A = 0.12  #
+gama = 1.41  #
+Pd = 100  #
+P(min)=1
+P(max)=100

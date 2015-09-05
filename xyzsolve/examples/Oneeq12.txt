@@ -1,0 +1,9 @@
+Volume from Virial Equation of State |POLVER05_1
+f(v) = (R*T/P)*(1+b/v+c/v^2)-v #
+b = -159 #
+c = 9000 #
+P = 75 #
+T = 430.85 #
+R = 82.05 #
+v(min)=100
+v(max)=300

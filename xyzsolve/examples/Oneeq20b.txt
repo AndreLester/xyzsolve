@@ -1,0 +1,11 @@
+Equilibrium conversion in a tubular reactor - revised form |POLVER05_1
+f(xa)=-ra/FA0 #
+T=313 #
+P0=10 #
+FA0=20*P0/(0.082*450) #
+k1=1.277*1.e9*exp(-90000/(8.31*T)) #
+k2=1.29*1.e11*exp(-135000/(8.31*T)) #
+xa1=1+xa #
+ra = (-k1*P0*(1-xa)/xa1+k2*P0*P0*xa*xa/(xa1^2)) #
+xa(min)=.75
+xa(max)=1.2

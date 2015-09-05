@@ -1,0 +1,24 @@
+#Poorly scaled chemical equilibrium problem
+0 = x1+x2+x4-0.001 #
+0 = x5+x6-55 #
+0 = x1+x2+x3+2*x5+x6-110.001 #
+0 = x1-0.1*x2 #
+0 = x1-1e4*x3*x4 #
+0 = x5-55e14*x3*x6 #
+x1.guess = 10 
+x2.guess = 10 
+x3.guess = 10 
+x4.guess = 10 
+x5.guess = 10 
+x6.guess = 10
+
+x1.min = 0
+x2.min = 0
+x3.min = 0
+x4.min = 0
+x5.min = 0
+x6.min = 0
+
+#This reports a norm much greater than the tolerance but the solution is correct.
+#Need to inform the user that the equations are likely badly scaled.
+

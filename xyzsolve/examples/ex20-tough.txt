@@ -1,0 +1,54 @@
+#Modeling of a CSTR for a complex sequence of reactions
+#original formulation
+
+0 = V- vo*(CAO-CA)/(-rA)   #
+0 = V - vo*(CBO-CB)/(-rB)   #
+0 = V- vo*CC/rC  #
+0 = V - vo*CD/rD   #
+0 = V - vo*CE/rE   #
+0 = 5000*(350-T) - 25*(20+40)*(T-300) + V*SRH  #
+rA = 2*r1B   #
+rB = r1B+2*r2C   #
+rC = -3*r1B + r2C   #
+rD = -r3E - r2C   #
+rE = r3E   #
+r1B = -k1B*CA*CB   #
+r2C = -k2C*CC*CB^2   #
+r3E = k3E*CD   #
+k1B = 0.4*exp((20000/R)*(1/300-1/T))   #
+k2C = 10*exp((5000/R)*(1/310-1/T))   #
+k3E = 10*exp((10000/R)*(1/320-1/T))   #
+SRH = -rA*20000 + 2*r2C*10000 + 5000*r3E   #
+
+R = 1.987   #
+V = 500   #
+vo = 75/3.3   #
+CAO = 25/vo   #
+CBO = 50/vo   #
+
+CA.guess=.5
+CB.guess=.01
+CC.guess=1
+CD.guess=.01
+CE.guess=1
+T.guess=420
+
+T.min = 0
+CA.min = 0
+CA.max = 1
+
+CB.min = 0
+CB.max = 1
+
+CC.min = 0
+CC.max = 1
+
+CD.min = 0
+CD.max = 1
+
+CE.min = 0
+CE.max = 1
+
+SRH.min = 0
+T.max = 500
+

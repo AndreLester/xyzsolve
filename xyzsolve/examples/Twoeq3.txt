@@ -1,0 +1,7 @@
+Equilibrium conversion in a chemical reactor |POLVER05_3
+f(x) = k*sqrt(1-x)*((0.91-0.5*x)/(9.1-0.5*x)-x^2/((1-x)^2*Kp))  #
+f(T) = T*(1.84*x+77.3)-43260*x-105128  #
+k = exp(-149750/T+92.5)  #
+Kp = exp(42300/T-24.2+0.17*ln(T))  #
+x(0)=0.5
+T(0)=1700

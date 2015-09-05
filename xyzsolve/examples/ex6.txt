@@ -1,0 +1,14 @@
+e=0.001
+Re=1000000
+1/sqrt(f)=-2*log(e/3.71+2.51/(Re*sqrt(f)),10)
+f.guess = 1
+f.min = 0
+
+/*
+
+Most recent solution:
+---------------------
+Solution norm: 8.881784197e-16
+f = 0.0199311751266
+
+*/

@@ -1,0 +1,4 @@
+Batch Distillation at Infinite Reflux |POLVER05_1
+f(x) = (1/63)*ln(x)+(64/63)*ln(1/(1-x))+ln(0.95-x)-ln(0.9) #
+x(min)=.01
+x(max)=.7

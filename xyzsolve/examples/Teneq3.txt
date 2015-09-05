@@ -1,0 +1,27 @@
+Small flow sheeting system with recycle  |POLVER05_3
+f(x1) = x3-x1-x9  #
+f(x2) = x4-x2-x10  #
+f(x3) = (x3/(x3+x4)-xAinf)*exp(-(kA+kB)*tau)+xAinf-x5/(x5+x6)  #
+f(x4) = x3+x4-x5-x6  #
+f(x5) = x7/(x7+x8)-KA*x9/(x9+x10)  #
+f(x6) = x8/(x7+x8)-KB*x10/(x9+x10)  #
+f(x7) = x5-x7-x9  #
+f(x8) = x6-x8-x10  #
+f(x9) = x1-0.9  #
+f(x10) = x2-0.1  #
+tau=22.5/(x3+x4)  #
+xAinf=kB/(kA+kB)  #
+KA=0.4409  #
+KB=1.8299  #
+kA=0.08  #
+kB=0.03  #
+x1(0)=0.9
+x2(0)=0.1
+x3(0)=1
+x4(0)=0.2
+x5(0)=0.5
+x6(0)=0.8
+x7(0)=0.2
+x8(0)=0.7
+x9(0)=0.2
+x10(0)=0.1

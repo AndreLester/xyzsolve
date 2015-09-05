@@ -1,0 +1,22 @@
+#Equilibrium conversion in a chemical reactor
+0 = k*sqrt(1-x)*((0.91-0.5*x)/(9.1-0.5*x)-x^2/((1-x)^2*Kp))
+0 = T*(1.84*x+77.3)-43260*x-105128
+k = exp(-149750/T+92.5)
+Kp = exp(42300/T-24.2+0.17*log(T))
+
+x.guess=0.5
+T.guess=1700
+
+x.min = 0
+T.min = 0
+
+/*
+
+Most recent solution:
+---------------------
+Solution norm: 1.45725830664e-11
+k  = 2.88916283062
+Kp = 17.9400200036
+T  = 1637.70322947
+x  = 0.533372899553
+*/

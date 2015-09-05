@@ -1,0 +1,7 @@
+Flow in a smooth pipe |POLVER05_1
+f(v) = a*v^2+b*v^(7/4)-c #
+a = 240 #
+b = 40 #
+c = 200 #
+v(min)=.01
+v(max)=1

@@ -1,0 +1,12 @@
+application: xyzsolve
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /images
+  static_dir: images
+- url: /input.py
+  script: input.py
+- url: /.*
+  script: xyzsolve.py

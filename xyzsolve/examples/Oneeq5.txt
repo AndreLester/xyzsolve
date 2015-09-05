@@ -1,0 +1,7 @@
+Adiabatic Flame Temperature
+f(TR) = DH+TR*(ALPHA+TR*(BETA/2+TR*GAMMA/3))-298.0*(ALPHA+298.0*(BETA/2+298.0*GAMMA/3)) #
+ALPHA=7.256  #
+BETA=2.298E-3  #
+GAMMA=0.283E-6  #
+DH=-57798.0  #
+TR(min)=3000, TR(max)=5000

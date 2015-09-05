@@ -1,0 +1,5 @@
+Global reaction rate in Catalytic Oxidation of Nitrogen  |POLVER05_3
+f(rp) = rp-0.327*x^0.804*exp(-5230/(1.987*(373+1.84e6*rp))) #
+f(x) = x-(0.06-161*rp) #
+rp(0)=0.5
+x(0)=0.5

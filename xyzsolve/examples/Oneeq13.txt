@@ -1,0 +1,11 @@
+Gas Volume from Redlich Kwong Equation of State |POLVER05_1  
+f(V) = R*T^1.5*V*(V+B)/(P*sqrt(T)*V*(V+B)+A)+B-V  #
+Pc=45.8   #
+Tc=191.0  #
+P=100   #
+T=210.0  #
+R=0.08205   #
+A = 0.42748*(R^2*Tc^2.5)/Pc  #
+B=0.08664*R*Tc/Pc  #
+V(min)=.01
+V(max)=.3

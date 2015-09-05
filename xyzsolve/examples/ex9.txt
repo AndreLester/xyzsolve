@@ -1,0 +1,85 @@
+#Total Carbon
+n1 + n4 - 3 = 0
+
+#Total Oxygen
+2*n1 + n2 + n4 + n7 + n8 + n9 + 2*n10 - R = 0
+
+#Total Hydrogen
+2*n2 + 2*n5 + n6 + n7 - 8 = 0
+
+#Total Nitrogen
+2*n3 + n9 - 4*R = 0
+
+#All
+nT = n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10
+
+#Equilibrium
+pfact = p/nT
+K5*n2*n4 - n1*n5 = 0
+K6*sqrt(n2*n4) - sqrt(n1)*n6*sqrt(pfact) = 0
+K7*sqrt(n1*n2) - sqrt(n4)*n7*sqrt(pfact) = 0
+K8*n1 - n4*n8*(pfact) = 0
+K9*n1*sqrt(n3) - n4*n9*sqrt(pfact) = 0
+K10*n1*n1 - n4*n4*n10*pfact = 0
+
+#Equilibrium constants @ 2200K
+ 
+K5 = 1.930e-1
+K6 = 2.597e-3
+K7 = 3.448e-3
+K8 = 1.779e-5
+K9 = 2.155e-4
+K10 = 3.846e-5
+
+#Pressure in atmospheres
+p = 40
+ 
+#Stoich. ratio
+R = 10
+
+n1.guess = 25
+n2.guess = 5
+n3.guess = 5
+n4.guess = 5
+n5.guess = 25
+n6.guess = 5
+n7.guess = 25
+n8.guess = 5
+n9.guess = 5
+n10.guess = 50
+pfact.guess = 100
+
+
+n1.min = 0
+n2.min = 0
+n3.min = 0
+n4.min = 0
+n5.min = 0
+n6.min = 0
+n7.min = 0
+n8.min = 0
+n9.min = 0
+n10.min = 0
+pfact.min = 0
+
+
+/*
+
+Most recent solution:
+---------------------
+Solution norm: 3.15157361344e-09
+n1    = 2.91572688015
+n10   = 0.0311478712385
+n2    = 3.96094305402
+n3    = 19.9862914072
+n4    = 0.0842731198546
+n5    = 0.0220952103459
+n6    = 0.000722760144402
+n7    = 0.033200711131
+n8    = 0.000416426595302
+n9    = 0.0274171856366
+nT    = 27.0622346263
+pfact = 1.47807454012
+*/
+
+

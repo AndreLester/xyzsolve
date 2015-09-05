@@ -1,0 +1,4 @@
+Chemical equilibrium calculation
+f(z) = 8*(4-z)^2*z^2/((6-3*z)^2*(2-z))-0.186 #
+z(min)=.1
+z(max)=.9

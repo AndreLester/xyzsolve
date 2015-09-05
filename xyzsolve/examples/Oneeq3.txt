@@ -1,0 +1,4 @@
+Kinetic problem
+f(T) = exp(21000/T)/T^2-1.11e11 #
+T(min)=550
+T(max)=560

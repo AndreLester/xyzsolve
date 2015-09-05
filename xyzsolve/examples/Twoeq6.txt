@@ -1,0 +1,5 @@
+Conversion in a Chemical Reactor  |POLVER05_3
+f(x1) = x1/(1-x1)-5*ln(0.4*(1-x1)/x2)+4.45977 #
+f(x2) = x2-(0.4-0.5*x1) #
+x1(0)=0.9
+x2(0)=0.5

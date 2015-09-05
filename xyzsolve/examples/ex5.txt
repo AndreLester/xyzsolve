@@ -1,0 +1,70 @@
+// Mixing Point:
+
+n0 + n6 = 100
+
+// Reactor:
+
+n1 = 100 - xi1 - xi2
+n2 = xi1
+n3 = xi2
+n4 = xi1 + 2*xi2
+ntot = n1 + n2 + n3  + n4              
+
+//These forms have difficulty converging. 
+//Try rewriting without denominators
+//xi1*(xi1 + 2*xi2) / ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2)) = 3.75
+//xi2*(xi1 + 2*xi2)^2 / ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2)^2) = 0.135
+
+
+xi1*(xi1 + 2*xi2) = 3.75  * ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2))
+xi2*(xi1 + 2*xi2)^2 = 0.135 * ((100 - xi1 - xi2)*(100 + xi1 + 2*xi2)^2)
+
+// Separation Process:
+n5 = 0.05*n1
+n1 = n5 + n6
+
+
+// You can use initial guesses to try and obtain a positive solution
+// you get another solution set, that is negative.
+
+n0.guess = 100
+n1.guess = 50
+n2.guess = 50
+n3.guess = 50
+n4.guess = 50
+n5.guess = 50
+n6.guess = 50
+ntot.guess = 200
+xi1.guess = 100
+xi2.guess = 100
+
+// Or enforce bounds with the min/max attributes
+n0.min = 0
+n1.min = 0
+n2.min = 0
+n3.min = 0
+n4.min = 0
+n5.min = 0
+n6.min = 0
+ntot.min = 0
+xi1.min = 0
+xi2.min = 0
+
+
+/*
+
+Most recent solution:
+---------------------
+Solution norm: 2.16111171043e-06
+n0   = 89.7309030407
+n1   = 10.8095757466
+n2   = 83.0630017492
+n3   = 6.12742250413
+n4   = 95.3178467575
+n5   = 0.54047878733
+n6   = 10.2690969593
+ntot = 195.317846757
+xi1  = 83.0630017492
+xi2  = 6.12742250413
+*/
+

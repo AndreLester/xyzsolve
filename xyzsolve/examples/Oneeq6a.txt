@@ -1,0 +1,15 @@
+Gas Volume from Beattie Bridgeman Equation of State - Original Form 
+f(V)=R*T/V+Beta/(V*V)+Gama/(V*V*V)+Delta/(V*V*V*V)-P
+R=0.08205
+T=273.0
+B0=0.05587
+A0=2.2769
+C=128300.0
+A=0.01855
+B=-0.01587
+P=100.0
+Beta=R*T*B0-A0-R*C/(T*T)
+Gama=-R*T*B0*B+A0*A-R*C*B0/(T*T)
+Delta=R*B0*B*C/(T*T)
+V(min)=0.1
+V(max)=1.0

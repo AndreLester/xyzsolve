@@ -1,0 +1,8 @@
+Stability of Batch Fluidized Catalytic Reactor - Rounded Numbers |POLVER05_1
+f(T)=1.3*(T-Tp)+1.04e4*k*Pp #
+Tp=(269*T-1752)/267 #
+k=0.0006*exp(20.7-15000/Tp) #
+Pp=-(0.1/(321*(320/321-(1+k)))) #
+P=(320*Pp+0.1)/321 #
+T(min)=500
+T(max)=1500

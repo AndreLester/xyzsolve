@@ -1,0 +1,16 @@
+Eq. composition in a constant volume gas-phase batch reactor - orig. form  |POLVER05_3
+f(CD) = CC*CD/(CA*CB)-KC1 #
+f(CX) = CX*CY/(CB*CC)-KC2 #
+f(CZ) = CZ/(CA*CX)-KC3 #
+CY=CX+CZ #
+CC=CD-CY #
+CA=CA0-CD-CZ #
+CB=CB0-CD-CY #
+KC1=1.06 #
+KC2=2.63 #
+KC3=5 #
+CA0=1.5 #
+CB0=1.5 #
+CD(0)=0.7
+CX(0)=0.2
+CZ(0)=0.4

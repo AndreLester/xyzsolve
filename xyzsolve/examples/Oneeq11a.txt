@@ -1,0 +1,9 @@
+Chemical Equilibrium - 1st Formulation
+f(x) = a-((c+2*x)^2*(a+b+c-2*x)^2)/(kp*P^2*(b-3*x)^3)-x #
+a = 0.5 #
+b = 0.8 #
+c = 0.3 #
+kp = 604500 #
+P = 0.00243 #
+x(min)=0.0
+x(max)=1.0

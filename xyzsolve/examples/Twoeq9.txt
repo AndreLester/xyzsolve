@@ -1,0 +1,11 @@
+Pipe flow velocity calculation for a specified pressure drop      |POLVER05_3
+f(fF) = fF-1/(2.28-4*log(eps/D+4.67/(Re*fF^0.5)))^2 #
+f(u) = 133.7-(2*fF*rho*u*u*L/D+rho*g*200)/(g*144) #
+L=6000  #
+D=0.505  #
+rho=53  #
+g=32.2  #
+eps=.00015  #
+Re=rho*D*u/(13.2*0.000672)  #
+fF(0)=.1 
+u(0)=10

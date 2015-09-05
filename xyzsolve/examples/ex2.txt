@@ -1,0 +1,16 @@
+#Posey model for vapor pressure
+
+P_CO2 = exp(log_K_CO2)*X_CO2*(L/(1-L))
+
+log_K_CO2 = A + B/T + C*L*X_Amine + D*sqrt(L*X_Amine)
+
+X_CO2 = 1 - 1/(1 + L*X_Amine)
+
+A = 32.45
+B = -7440
+C = 33
+D = 18.5
+
+X_Amine = 0.04
+T = 300
+L = 0.2

@@ -1,0 +1,18 @@
+Steady state solution for reaction rate equations - 2nd parameter set |POLVER05_1
+f(x1) = 1-x1-k1*x1*x6+kr1*x4  #
+f(x2) = 1-x2-k2*x2*x6+kr2*x5  #
+f(x3) = -x3+2*k3*x4*x5  #
+f(x4) = k1*x1*x6-kr1*x4-k3*x4*x5  #
+f(x5) = 1.5*(k2*x2*x6-kr2*x5)-k3*x4*x5  #
+f(x6) = 1-x4-x5-x6  #
+k1 = 17.721 #
+k2 = 3.483 #
+kr1 = 0.118 #
+kr2 = 0.033 #
+k3 = 505.051 #
+x1(0)=.99
+x2(0)=.05
+x3(0)=.05
+x4(0)=.99
+x5(0)=.05
+x6(0)=0

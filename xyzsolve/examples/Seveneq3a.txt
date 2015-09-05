@@ -1,0 +1,27 @@
+Flow Distribution in a Pipeline Network - Constant Friction Factor  |POLVER05_3
+f(q01)=q01-q12-q13 #
+f(q12)=q12-q24-q23 #
+f(q13)=q23+q13-q34 #
+f(q24)=q24+q34-q45 #
+f(q23)=k01*q01^2+k12*q12^2+k24*q24^2+k45*q45^2+deltaPUMP #
+f(q34)=k13*q13^2-k23*q23^2-k12*q12^2 #
+f(q45)=k23*q23^2+k34*q34^2-k24*q24^2 #
+fF=0.005 #
+rho=997.08 #
+D=0.154 #
+pi=3.1416 #
+deltaPUMP=-15.e5 #
+k01=32*fF*rho*100/(pi^2*D^5) #
+k12=32*fF*rho*300/(pi^2*D^5) #
+k24=32*fF*rho*1200/(pi^2*D^5) #
+k45=32*fF*rho*300/(pi^2*D^5) #
+k13=32*fF*rho*1200/(pi^2*D^5) #
+k23=32*fF*rho*300/(pi^2*D^5) #
+k34=32*fF*rho*1200/(pi^2*D^5) #
+q01(0)=0.1
+q12(0)=0.1
+q13(0)=0.1
+q24(0)=0.1
+q23(0)=0.1
+q34(0)=0.1
+q45(0)=0.1

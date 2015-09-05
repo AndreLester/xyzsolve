@@ -1,0 +1,14 @@
+Heat duty of a shell and tube heat exchanger|POLVER05_1  
+f(Q)=U*A*(DT2-DT1)/ln(DT2/DT1)-Q  #
+DT1=T1-t1-Q/(M*Cp) #
+DT2 = T1-t1-Q/(m*cp) #
+M=43800.0  #
+m=149000.0  #
+Cp=0.605  #
+U=55.0  #
+A=662.0  #
+T1=390.0  #
+t1=100.0  #
+cp=0.49  #
+Q(min)=1000000
+Q(max)=7000000

@@ -1,0 +1,12 @@
+Correlation of liquid-liquid equilibrium data |POLVER05_1
+f(t12) = 1/(x1*x2)-2*t21*c2/((x1+x2*c1)^3)-2*t12*c4/((x2+x1*c3)^3) #
+f(t21) = (x1-x2)/((x1*x2)^2)+6*t21*c2*(1-c1)/((x1+x2*c1)^4)+6*t12*c4*(c3-1)/((x2+x1*c3)^4) #
+c1=exp(-alpha*t21) #
+c2=exp(-2*alpha*t21) #
+c3=exp(-alpha*t12) #
+c4=exp(-2*alpha*t12) #
+x2=1-x1 #
+alpha=0.4 #
+x1=0.5 #
+t12(0)=1
+t21(0)=10

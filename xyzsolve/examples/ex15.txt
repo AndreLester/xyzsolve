@@ -1,0 +1,24 @@
+#Doesn't converge. See what's going on here
+
+0 = 120*x-75*k*(1-x) #
+0 = -x*(873-T)+11.0*(T-300) #
+k = 0.12*exp(12581*(T-298)/(298*T))  #
+
+x.guess = 0.98
+T.guess = 330
+x.min = 0
+x.max = 1
+k.guess = 42
+
+
+/*
+
+Iteration is not making good progress.
+The solver is likely stuck in a variable space valley.
+Try another initial guess.
+---------------------
+Solution norm: 0.142654725197
+k = 0.123574342838
+T = 303.715905722
+x = 0.0717988725441
+*/

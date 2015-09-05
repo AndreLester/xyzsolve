@@ -1,0 +1,20 @@
+Two phase flash of a nonideal binary mixture (isobutanol-water)|POLVER05_0
+f(x1)=x1-z1/(1+alpha*(k1-1)) #
+f(x2)=x2-z2/(1+alpha*(k2-1)) #
+f(alpha)=x1+x2-(y1+y2) #
+p1=10^(7.62231-1417.9/(191.15+t)) #
+p2=10^(8.10765-1750.29/(235+t)) #
+gamma2=10^(B*x1*x1/((x1+B*x2/A)^2)) #
+gamma1=10^(A*x2*x2/((A*x1/B+x2)^2)) #
+k1=gamma1*p1/760 #
+k2=gamma2*p2/760 #
+y1=k1*x1 #
+y2=k2*x2 #
+t=88.538 #
+B=0.7 #
+A=1.7 #
+z1=0.2 #
+z2=0.8 #
+x1(0)=0
+x2(0)=1
+alpha(0)=0.5
