@@ -8,8 +8,6 @@ The equation solver is python translation of a Fortran-based modified Powell alg
 
 All code is available for any use (including commercial) under a BSD style license.
 
-Code is currently not under SVN. Visit the downloads section to obtain the latest version of the code.
-
 ###Similar Projects
 
 1. [QED Solver](www.qedsolver.com)  *Commercial*  
